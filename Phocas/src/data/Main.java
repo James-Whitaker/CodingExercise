@@ -65,11 +65,11 @@ public class Main {
 						|| temp.equals("no")) {
 					d.sortByName(false, d.lines);
 					d.printLines();
-					System.out.println("Sorted list: names alphabetically");
+					System.out.println("Sorted list: names reverse alphabetically");
 				} else {
 					d.sortByName(true, d.lines);
 					d.printLines();
-					System.out.println("Sorted list: names reverse alphabetically");
+					System.out.println("Sorted list: names alphabetically");
 				}
 			} else if (temp.equals("Country") || temp.equals("country") || temp.equals("c")) {
 				System.out.println("Alphabetically?:   ");
@@ -78,11 +78,11 @@ public class Main {
 						|| temp.equals("no")) {
 					d.sortByCountry(false, d.lines);
 					d.printLines();
-					System.out.println("Sorted list: country alphabetically");
+					System.out.println("Sorted list: country reverse alphabetically");
 				} else {
 					d.sortByCountry(true, d.lines);
 					d.printLines();
-					System.out.println("Sorted list: country reverse alphabetically");
+					System.out.println("Sorted list: country alphabetically");
 				}
 			}
 		} else if (temp.equals("Find") || temp.equals("find") || temp.equals("f") || temp.equals("Get")

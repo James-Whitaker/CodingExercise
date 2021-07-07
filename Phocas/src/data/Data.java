@@ -125,6 +125,7 @@ public class Data {
 		int index = -1;
 		if (lines.isEmpty()) {
 			System.out.println("No data to query");
+			return -1;
 		}
 		for (int i = 0; i < lines.size(); i++) {
 			if (age < lines.get(i).getAge()) {
@@ -145,6 +146,7 @@ public class Data {
 		int index = -1;
 		if (lines.isEmpty()) {
 			System.out.println("No data to query");
+			return -1;
 		}
 		for (int i = 0; i < lines.size(); i++) {
 			if (age > lines.get(i).getAge()) {
@@ -533,21 +535,28 @@ public class Data {
 	/*
 	 * Returns each country and the number of people in each
 	 */
-	public void getCountryCount() {
+	public List<String> getCountryCount() {
 		List<String> countries = new ArrayList<String>();
+		//If no data, returns an empty list
 		if (lines.isEmpty()) {
 			System.out.println("No data to query");
-			return;
+			return countries;
 		}
+		//Finds all countries in data and stores them in the list, can't use the global as imported data may not match
 		countries.add(lines.get(0).getCountry());
 		for (int i = 1; i < lines.size(); i++) {
 			if (!countries.contains(lines.get(i).getCountry())) {
 				countries.add(lines.get(i).getCountry());
 			}
 		}
+		//counts is mainly for testing, outputs countries and the pop, adds output to the list.
+		List<String> counts = new ArrayList<String>();
 		for (int i = 0; i < countries.size(); i++) {
 			List<Line> temp = getCountry(countries.get(i), lines);
 			System.out.println(countries.get(i) + "->" + temp.size());
+			counts.add(countries.get(i) + "->" + temp.size());
 		}
+		System.out.println("Total countries:  "+ countries.size());
+		return counts;
 	}
 }
